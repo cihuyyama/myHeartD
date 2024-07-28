@@ -26,6 +26,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   const [model, setModel] = useState<tfdf.TFDFModel | null>(null);
@@ -166,7 +167,7 @@ export default function Home() {
       'chestscan': tf.tensor([parseInt(values.chestscan)], [1], 'int32'),
       'raceethnicitycategory': tf.tensor([parseInt(values.raceethnicitycategory)], [1], 'int32'),
       'agecategory': tf.tensor([parseInt(values.agecategory)], [1], 'int32'),
-      'heightinmeters': tf.tensor([parseFloat(values.heightinmeters)/100], [1], 'float32'),
+      'heightinmeters': tf.tensor([parseFloat(values.heightinmeters) / 100], [1], 'float32'),
       'bmi': tf.tensor([parseFloat(values.bmi)], [1], 'float32'),
       'alcoholdrinkers': tf.tensor([parseInt(values.alcoholdrinkers)], [1], 'int32'),
       'hivtesting': tf.tensor([parseInt(values.hivtesting)], [1], 'int32'),
@@ -268,6 +269,13 @@ export default function Home() {
 
   return (
     <main className="w-screen h-full flex flex-col justify-start items-center gap-4 mt-10">
+      <h1 className="text-xl font-semibold">
+        AI Deteksi Penyakit Jantung
+      </h1>
+      <Separator className="max-w-[800px]" />
+      <h3 className="text-sm text-gray-500">
+        Silahkan isi form berikut untuk mendeteksi penyakit jantung
+      </h3>
       <div className="border-2 border-gray-500 px-4 py-2 shadow-lg rounded-lg max-w-[800px]">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
