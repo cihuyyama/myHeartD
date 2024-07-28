@@ -268,7 +268,7 @@ export default function Home() {
   };
 
   return (
-    <main className="w-screen h-full flex flex-col justify-start items-center gap-4 mt-10">
+    <main className="w-full h-full flex flex-col justify-start items-center gap-4 mt-10 md:px-0 px-6">
       <h1 className="text-xl font-semibold">
         AI Deteksi Penyakit Jantung Koroner
       </h1>
